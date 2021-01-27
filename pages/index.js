@@ -1,4 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
@@ -20,6 +22,9 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>FriendsQuiz</title>
+      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
