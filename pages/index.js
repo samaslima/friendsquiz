@@ -7,6 +7,7 @@ import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
 import db from '../db.json';
 
 export const QuizContainer = styled.div`
@@ -41,11 +42,11 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <input
-                onChange={function (infosDoEvento) {
-                  setName(infosDoEvento.target.value);
-                }}
-                placeholder="Digite seu nome"
+              <Input
+                name="nomeDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                placeholder="Digite o seu nome"
+                value={name}
               />
               <button type="submit" disabled={name.length === 0}>
                 Jogar
